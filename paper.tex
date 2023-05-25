@@ -141,13 +141,47 @@ I left her with all eight cards, and a hint: ``You can make a list of $2^n$ item
 
 \section*{Lesson 2: How a computer stores a number}
 
-\section*{Lesson 3: The end of Moore's law}
+TK, but the punchline is that they got to:
+
+\begin{table}[h]\sffamily
+  \begin{tabular}{lll}
+  Signal (cards) & Signal (numbers) & Integer \\
+  \midrule
+  RRR & 000 & 0 \\
+  RRB & 001 & 1 \\
+  RBR & 010 & 2 \\
+  RBB & 011 & 3 \\
+  BRR & 100 & 4 \\
+  BRB & 101 & 5 \\
+  BBR & 110 & 6 \\
+  BBB & 111 & 7 \\
+  \end{tabular}
+  % \caption{Iteration 4.}%
+\end{table}
+
+\section*{Lesson 3: A look at a circuit, and the end of Moore's law}
+
+This was a digression.
+I brought in an FPGA and showed them the wires running between components.
+I drew the analogy to the game.
+The students were super interested in the fan, however, and we entered into an unplanned discussion about Moore's Law.
+
+Fuller description TK.
 
 \section*{Lesson 4: Why $8$ looks like $0$}
 
+I asked for a volunteer and we stood together in front of the class.
+We were at $0$ on a number line, and moving to our right meant adding $1$.
+She was a human, and I a computer.
+We counted from $0$ through $7$ no problem, but on adding $1$ to $7$ she took a step to her right and I ran all the way back to $0$.
+
+I mapped this back to overflow, and why it is such a big issue.
+If you're in your car with your mom and you \emph{think} you're doing $0$ miles per hour, but you're actually doing $8$, you may be in trouble.
+Eight miles an hour is not very fast, but there's a whole bunch of stuff that we're allowed to do at $0$ miles an hour that we're not allowed to do at $8$ miles an hour.
+
 \section*{Reflections}
 
-
+TK
 
 \section*{Acknowledgments}
 
