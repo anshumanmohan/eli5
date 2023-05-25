@@ -47,7 +47,7 @@
 Little kids use computers all the time.
 The phone is the new pacifier; the iPad is the new slate and chalk.
 Increasingly early in their schooling, kids also learn how to code.
-We must teach them formal methods before all else.
+We must scare them straight by teaching them formal methods before all else.
 
 Over four half-hour sessions, I taught a class of first-graders enough computer science to understand and appreciate the Ariane 5 space shuttle disaster.
 Here's how.
@@ -58,50 +58,86 @@ Here's how.
 
 \section*{Lesson 1: A tale of two hungry cities}
 
-I went into class with eight little handmade flags, each colored pink on one side and white on the other.
-We split the class into two groups, standing in huddles on opposite ends of the room.
-I handed each group one flag and explained the game:
+I went into class with eight pieces of card, each colored red on one side and blue on the other.
+I split the class into two groups, standing in huddles on opposite ends of the room.
+I handed each group one card and explained the game:
 
 ``You are two cities on hills, and you have a zipline that carries food between you.
-Occasionally you'd like to order something to eat from the other city, but the city is rather far and you can only communicate using your flags.
-A flag is either pink or white, and you can order either a burger or spaghetti.''
+Occasionally you'd like to order something to eat from the other city, but the city is rather far and you can only communicate using your cards.
+A card is either red or blue, and you can order either a burger or spaghetti.''
 
-I allowed them one meeting to come up with a plan, with a warning that the cities were very far apart: they wouldn't be able to hear each other, or see anything but their flags, once the meeting was over.
+I allowed them one meeting to come up with a plan, and they quickly had a plan: red would mean a burger, and blue spaghetti.
 
-In just a few minutes, they had it figured out: pink meant a burger, white meant spaghetti.
-
-% P | burger
-% W | spaghetti
+\begin{table}[h]\sffamily
+  \begin{tabular}{ll}
+  Signal & Order \\
+  \midrule
+  R & burger \\
+  B & spaghetti \\
+  \end{tabular}
+  % \caption{Iteration 1.}%
+\end{table}
 
 I sneaked up to one city and whispered, ``Can you order me a burger, please?'', and the students delivered.
 I ran to the other city and got them to order me another burger and some spaghetti. Delicious.
 Then I went to the first city and requested that they order me a hot dog.
 
-Pandemonium ensued.
-I was accused of being a very naughty man.
+Pandemonium.
+I was accused of being a naughty man.
 
-A student proposed that \emph{no} flag could mean a hot dog, but I steered them away from that: ``Well some days you may want to order nothing at all; reserve no flag for that.''
+A student proposed that \emph{no card} could mean a hot dog, but I steered them away from that: ``Well some days you may want to order nothing at all; reserve no card for that.''
 
-Another proposed balancing the flag between pink and white, or swapping quickly between pink and white; I steered them clear of these too.
-After a minute I offered each city a second flag, and they had an answer right away.
-The old rules would remain, and _any_ two flags would mean hot dog.
+Another proposed balancing the card between red and blue, or swapping quickly between red and blue; I steered them clear of these too.
+After a minute I offered each city a second card, and they had an answer right away.
+The old rules would remain, and \emph{any} two cards would mean hot dog.
 
-% P | burger
-% W | spaghetti
-% PP,PW,WP,WW | hot dog
+\begin{table}[h]\sffamily
+  \begin{tabular}{ll}
+  Signal & Order \\
+  \midrule
+  R & burger \\
+  B & spaghetti \\
+  RR, BB, BR, RB & hot dog
+  \end{tabular}
+  % \caption{Iteration 2.}%
+\end{table}
 
-This made me a little nervous, since it was not part of the plan, but things worked themselves out when I asked them to please order Ms Zdan a pizza.
-A precocious student pointed out that they actually had room for a \emph{fifth} menu item.
+This made me a little nervous, since it was not part of the plan, but I steered things along:
+``Well this is great, but what if the other city confuses the hot dog order with just a double order, or a burger that is chopped up and mixed into spaghetti?''
 
-% P | burger
-% W | spaghetti
-% PP | hot dog
-% WW | pizza
-% PW, WP | ice cream
+They figured out the way to make me happy:
 
-``Well this is going great, but I just realized something.
-What if the other city confuses the pizza order with just a huge order of spaghetti?
-Or ice cream with a burger that is chopped up and mixed into spaghetti?
+\begin{table}[h]\sffamily
+  \begin{tabular}{ll}
+  Signal & Order \\
+  \midrule
+  RR & burger \\
+  BB & spaghetti \\
+  RB, BR & hot dog
+  \end{tabular}
+  % \caption{Iteration 3.}%
+\end{table}
+
+They soon realized they could actually say four things:
+
+\begin{table}[h]\sffamily
+  \begin{tabular}{ll}
+  Signal & Order \\
+  \midrule
+  RR & burger \\
+  BB & spaghetti \\
+  RB & hot dog \\
+  BR & pizza
+  \end{tabular}
+  % \caption{Iteration 4.}%
+\end{table}
+
+And of course, the finale: I handed them a third card, asked them to make the longest list they could, and left the room.
+I returned to a menu of eight items.
+
+We were out of time, but the students had enough fun that Ms Zdan requested that I leave the cards for them to play with until next week's lesson.
+I left her with all eight cards, and a hint: ``You can make a list of $2^n$ items using $n$ cards.''
+
 
 \section*{Lesson 2: How a computer stores a number}
 
