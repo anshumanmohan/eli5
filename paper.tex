@@ -1,4 +1,4 @@
-\documentclass[sigplan,review]{acmart}
+\documentclass[sigplan]{acmart}
 
 \usepackage{amsmath}
 \usepackage{mathpartir}
@@ -63,10 +63,10 @@ I split the class into two groups, standing in huddles on opposite ends of the r
 I handed each group one card and explained the game:
 
 ``You are two cities on hills, and you have a zipline that carries food between you.
-Occasionally you'd like to order something to eat from the other city, but the city is rather far and you can only communicate using your cards.
+Occasionally you'd like to order something to eat from the other city, but the cities are rather far apart and you can only communicate using your cards.
 A card is either red or blue, and you can order either a burger or spaghetti.''
 
-I allowed them one meeting to come up with a plan, and they quickly had a plan: red would mean a burger, and blue spaghetti.
+I allowed them one meeting to come up with a plan, and they quickly had something: red would mean a burger, and blue spaghetti.
 
 \begin{table}[h]\sffamily
   \begin{tabular}{cc}
@@ -127,17 +127,16 @@ They figured out the way to make me happy:
   RR & burger \\
   BB & spaghetti \\
   RB & hot dog \\
-  BR & pizza
+  BR & bibimbap
   \end{tabular}
   % \caption{Iteration 4.}%
 \end{table}
 
-As a finale, I handed them a third card, asked them to make the longest list they could, and left the room.
-I returned to a menu of eight items.
+Finally I handed them a third card, asked them to make the longest list they could, and left the room.
+I returned to a menu of eight items and some rather hungry kids.
 
 We were out of time, but the students had enough fun that Ms Zdan requested that I leave the cards for them to play with until next week's lesson.
-I left her with all eight cards, and a hint: ``You can make a list of $2^n$ items using $n$ cards.''
-
+I left her with all eight cards, and a hint: that $n$ cards can say $2^n$ things.
 
 \section*{Lesson 2: How a computer stores a number}
 
@@ -145,7 +144,7 @@ TK, but the punchline is that after this lesson we got to:
 
 \begin{table}[h]\sffamily
   \begin{tabular}{ccc}
-  Signal (cards) & Signal (numbers) & Integer \\
+  Signal (cards) & Signal (binary) & Number (decimal) \\
   \midrule
   RRR & 000 & 0 \\
   RRB & 001 & 1 \\
@@ -164,16 +163,33 @@ TK, but the punchline is that after this lesson we got to:
 This was a digression.
 I brought in an FPGA and showed them the wires running between components.
 I drew the analogy to the game.
-The students were super interested in the fan, however, and we entered into an unplanned discussion about Moore's Law.
+The students were super interested in the fan, however, and we entered into an unplanned discussion about Moore's law.
 
 Fuller description TK.
 
 \section*{Lesson 4: Why $8$ looks like $0$}
 
+TK, but here's a sketch.
+
 I asked for a volunteer and we stood together in front of the class.
 We were at $0$ on a number line, and moving to our right meant adding $1$.
 She was a human, and I a computer.
 We counted from $0$ through $7$ no problem, but on adding $1$ to $7$ she took a step to her right and I ran all the way back to $0$.
+
+I mapped this back to regular math, where performing $9 + 1 = 10$ requires an additional digit.
+What do you do when you are not allowed that additional digit?
+There isn't a clean answer, you you're going to have to do \emph{something}.
+We went over the table that we had already drawn up and explored some of the binary addition that was implicit.
+
+Adding one to $1_{dec}$ is the same as adding one to $001_{bin}$.
+How do we do it? We carry the $1$, just like we do in regular math, and arrive at $010_{bin} = 2_{dec}$.
+Adding one to $3_{dec}$ is the same as adding one to $011_{bin}$.
+It's a little more complicated than list time---a little like $99+1 = 100$ in regular math---but we figure it out and arrive at $100_{bin} = 4_{dec}$.
+
+Adding one to $7_{dec}$ is the same as adding one to $111_{bin}$, and \emph{we} know how to do that and arrive at $1000_{bin} = 8_{dec}$.
+However, a computer that has three cards is in trouble: it only has three cards, so it just drops the leftmost one.
+This gives us $000_{bin} = 0_{dec}$.
+Uh oh.
 
 I mapped this back to overflow, and why it is such a big issue.
 If you're in your car with your mom and you \emph{think} you're doing $0$ miles per hour, but you're actually doing $8$, you may be in trouble.
@@ -185,10 +201,10 @@ TK
 
 \section*{Acknowledgments}
 
-My time at Beverly J Martin Elementary School was facilitated by Cornell University's \textsc{grasshopr} program, a volunteer organization that pairs graduate students with K-12 teachers so they can share their research with curious students.
+My time at Beverly J Martin Elementary School was facilitated by Cornell University's \textsc{grasshopr} program, a volunteer organization that pairs graduate students with K-12 teachers so we can share our research with curious students.
 This is hard, important, rewarding work, and you are superstars for making it happen every year.
 
-An enormous thank you to Ms Lisa Zdan, her teaching aides A and B, and of course her students.
+An enormous thank you to Ms Lisa Zdan, her teaching aides A and B\anshuman{ask}, and of course her students.
 
 \appendix
 \include{appendix}
